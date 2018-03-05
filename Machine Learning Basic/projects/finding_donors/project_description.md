@@ -46,7 +46,7 @@ In the Terminal or Command Prompt, navigate to the folder containing the project
 Your project will be reviewed by a Udacity reviewer against the **<a href="https://review.udacity.com/#!/rubrics/406/view" target="_blank">Finding Donors for CharityML project rubric</a>**. Be sure to review this rubric thoroughly and self-evaluate your project before submission. All criteria found in the rubric must be *meeting specifications* for you to pass.
 
 ### Submission Files
-When you are ready to submit your project, collect the following files and compress them into a single archive for upload. Alternatively, you may supply the following files on your GitHub Repo in a folder named `student_intervention` for ease of access:
+When you are ready to submit your project, collect the following files and compress them into a single archive for upload. Alternatively, you may supply the following files on your GitHub Repo in a folder named ~~`student_intervention`~~ `finding_donors` for ease of access:
  - The `finding_donors.ipynb` notebook file with all questions answered and all code cells executed and displaying output.
  - An **HTML** export of the project notebook with the name **report.html**. This file *must* be present for your project to be evaluated.
 
