@@ -12080,12 +12080,10 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-<font color="navy">
-The first &amp; second samples indexed at 10 and 100 respectively look like <b>super stores</b> because they are heavy on purchase of almost all the products. First is less on Fresh, while second one is at average meaning second sample could also be selling (to end consumer) fresh products equally as others. Also for Delicatessen, second sample is a heavy purchaser.
-<br/>
-<br/>
-Third sample looks like a specific estabishment <b>dealing with Frozen products</b>. Rest of the products are quite below average.</p>
+<p><strong>Answer:</strong></p>
+<blockquote><p>The first &amp; second samples indexed at 10 and 100 respectively look like <strong>super stores</strong> because they are heavy on purchase of almost all the products. First is less on Fresh, while second one is at average meaning second sample could also be selling (to end consumer) fresh products equally as others. Also for Delicatessen, second sample is a heavy purchaser.</p>
+<p>Third sample looks like a specific estabishment <strong>dealing with Frozen products</strong>. Rest of the products are quite below average.</p>
+</blockquote>
 
 </div>
 </div>
@@ -12173,12 +12171,14 @@ Third sample looks like a specific estabishment <b>dealing with Frozen products<
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-<font color="navy"></p>
-<p><ol></p>
+<p><strong>Answer:</strong></p>
+<blockquote><ol>
 <li>I chose to drop detergent paper as that is also captured in grocery (I could have dropped grocery as well).</li>
 <li>The score (R-square) is 0.49 - which indicates significant positive predictive power of rest of the prodcuts.</li>
 <li>Looking at this score, we might exclude detergent paper when we are using grocery for modelling, but 0.49 is not too high - so detergent feature does give us some additional information (albeit little).</li>
+</ol>
+</blockquote>
+
 </div>
 </div>
 </div>
@@ -13860,13 +13860,15 @@ lJmZFctJyszMiuUkZWZmxXKSMjOzYv1/st0/7bTjheIAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-<font color="navy"></p>
-<p><ol></p>
+<p><strong>Answer:</strong></p>
+<blockquote><ol>
 <li>Most of the features are right-tailed normal, Delicatessen and Frozen products seem to have least numbber of outliers and Delicatessen is quite low in quantity thus, near to zero.</li>
 <li>Milk, grocery and detergent seem related to each other, their scatter plots show positive relationships.</li>
-<li>This confirms above expectation that fetures including grocery will be able to predict detergent.</li>
-<li>Grocery and deergent scatter plot looks increasing together.</li>
+<li>This confirms above expectation that fetures including grocery will be able to predict detergent.
+Grocery and detergent scatter plot looks increasing together.</li>
+</ol>
+</blockquote>
+
 </div>
 </div>
 </div>
@@ -18797,13 +18799,17 @@ Indices (rows) with multiple outlir column values : [(array([ 65,  66,  75, 128,
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p><font color="navy"></p>
-<p><ol></p>
+<blockquote><ol>
 <li>Yes, there are 5 rows which have more than one outlier columns. These are : [65, 66, 75, 128, 154]</li>
-<li>I feel these rows (with multi-outliers) are more closer to reality than the rows containing only single outlier column - reasoning is, if real world behaviour of establishment is an outlier, many of the parameters of that organization should fall out of ballpark, hence we should find multiple outlier columns. But for the rows where we see only single outlier column, this is strange in the sense that, all other behaviours are normal, but only one is off - could be measurement error? 
-<br/> - So, I would rather like to 'cap' rows with multi-outliers (at Q3+1.5\*IQR) and remove single outliers. - Can you please advise me if this is making sense? any better option?
-<br/> - From K-means perspective, single outlier rows will still get annotated with same cluster had the outlier value be fixed. But multi outlier rows will not get good cluster mappings.</li>
-<li>I have added those rows to outliers list where we get even a single outlier.</li>
+<li>I feel these rows (with multi-outliers) are more closer to reality than the rows containing only single outlier column - reasoning is, if real world behaviour of establishment is an outlier, many of the parameters of that organization should fall out of ballpark, hence we should find multiple outlier columns. But for the rows where we see only single outlier column, this is strange in the sense that, all other behaviours are normal, but only one is off - could be measurement error? <ul>
+<li>So, I would rather like to 'cap' rows with multi-outliers (at Q3+1.5*IQR) and remove single outliers. - Can you please advise me if this is making sense? any better option?</li>
+<li>From K-means perspective, single outlier rows will still get annotated with same cluster had the outlier value be fixed. But multi outlier rows will not get good cluster mappings.</li>
+</ul>
+</li>
+<li>I have added those rows to outliers list where we get even a single outlier.&lt;/li&gt;</li>
+</ol>
+</blockquote>
+
 </div>
 </div>
 </div>
@@ -19207,19 +19213,20 @@ Cumulative explained variance ratio = [  49.9   72.5   83.    92.8   97.7  100. 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p><font color="navy"></p>
-<p><ol></p>
-<p><li> ~72% of total variance is explained by first two components of pca.</li></p>
-<p><li> ~93% of total variance is explained by first four components of pca.</li></p>
-<p><li>
-    <ul>
-    <li>First component has high positive weight for Milk, Grocery and detergent paper indicating that this component is capturing general store like establishments. Variance explained = 49.9%</li>
-    <li>Second component weighs high for Fresh, Frozen and Delicatessen - this might be capturing other-than-milk dairy product purchasing establishments. Cumulative variance explained = 72.5%</li>
-    <li>Third dimension captures establishments who do not purchase Fresh, detergent paper and grocery, but mainly focus around delicatessen. Cumulative variance explained = 83%</li>
-    <li>Fourth dimension captures establishments not purchasing Frozen and detergent papers, but mainly delicatessen and to some extent fresh products. Cumulative variance explained = 92.8%</li>
-    <li>Fifth dimension captures establishments like milk parlours. Cumulative variance explained = 97.7%</li>
-    <li>Last dimension captures establishments almost excludively dealing with grocery and no food/milk products. Cumulative variance explained = 100%</li>
-    &lt;/ul&gt;</p>
+<blockquote><ol>
+<li>~72% of total variance is explained by first two components of pca.</li>
+<li>~93% of total variance is explained by first four components of pca.</li>
+<li><ul>
+<li>First component has high positive weight for Milk, Grocery and detergent paper indicating that this component is capturing general store like establishments. Variance explained = 49.9%</li>
+<li>Second component weighs high for Fresh, Frozen and Delicatessen - this might be capturing other-than-milk dairy product purchasing establishments. Cumulative variance explained = 72.5%</li>
+<li>Third dimension captures establishments who do not purchase Fresh, detergent paper and grocery, but mainly focus around delicatessen. Cumulative variance explained = 83%</li>
+<li>Fourth dimension captures establishments not purchasing Frozen and detergent papers, but mainly delicatessen and to some extent fresh products. Cumulative variance explained = 92.8%</li>
+<li>Fifth dimension captures establishments like milk parlours. Cumulative variance explained = 97.7%</li>
+<li>Last dimension captures establishments almost excludively dealing with grocery and no food/milk products. Cumulative variance explained = 100%</li>
+</ul>
+</li>
+</ol>
+</blockquote>
 
 </div>
 </div>
@@ -19229,14 +19236,11 @@ Cumulative explained variance ratio = [  49.9   72.5   83.    92.8   97.7  100. 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Observation">Observation<a class="anchor-link" href="#Observation">&#182;</a></h3><p>Run the code below to see how the log-transformed sample data has changed after having a PCA transformation applied to it in six dimensions. Observe the numerical value for the first four dimensions of the sample points. Consider if this is consistent with your initial interpretation of the sample points.
-<br/>
-<br/>
-<font color="navy">
-My initial guess:<br/>
-The first &amp; second samples indexed at 10 and 100 respectively look like super stores because they are heavy on purchase of almost all the products. First is less on Fresh, while second one is at average meaning second sample could also be selling (to end consumer) fresh products equally as others. Also for Delicatessen, second sample is a heavy purchaser.
-<br/>
-Third sample looks like a specific estabishment dealing with Frozen products. Rest of the products are quite below average.</p>
+<h3 id="Observation">Observation<a class="anchor-link" href="#Observation">&#182;</a></h3><p>Run the code below to see how the log-transformed sample data has changed after having a PCA transformation applied to it in six dimensions. Observe the numerical value for the first four dimensions of the sample points. Consider if this is consistent with your initial interpretation of the sample points.</p>
+<blockquote><p>My initial guess:</p>
+<p>The first &amp; second samples indexed at 10 and 100 respectively look like super stores because they are heavy on purchase of almost all the products. First is less on Fresh, while second one is at average meaning second sample could also be selling (to end consumer) fresh products equally as others. Also for Delicatessen, second sample is a heavy purchaser.</p>
+<p>Third sample looks like a specific estabishment dealing with Frozen products. Rest of the products are quite below average.</p>
+</blockquote>
 
 </div>
 </div>
@@ -19520,7 +19524,7 @@ Cumulative explained variance ratio = [ 49.9  72.5]
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f8d38732588&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f35751ba390&gt;</pre>
 </div>
 
 </div>
@@ -20527,12 +20531,10 @@ iIiISMr/BwErh/y/w/jGAAAAAElFTkSuQmCC
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Observation">Observation<a class="anchor-link" href="#Observation">&#182;</a></h3><p>Once we have the original feature projections (in red), it is easier to interpret the relative position of each data point in the scatterplot. For instance, a point the lower right corner of the figure will likely correspond to a customer that spends a lot on <code>'Milk'</code>, <code>'Grocery'</code> and <code>'Detergents_Paper'</code>, but not so much on the other product categories.</p>
 <p>From the biplot, which of the original features are most strongly correlated with the first component? What about those that are associated with the second component? Do these observations agree with the pca_results plot you obtained earlier?</p>
-<p><strong>Answer:</strong>
-<font color="navy">
-The features Grocery, Milk and detergent are more closely correlated with first dimension of pca while with second component, fresh and frozen are more correlated. Delicatessen is somewhat shared between both dimensions, but more towards dimension 2.
-<br/>
-<br/>
-These results are in perfect alignment with the weights of components from pca.</p>
+<p><strong>Answer:</strong></p>
+<blockquote><p>The features Grocery, Milk and detergent are more closely correlated with first dimension of pca while with second component, fresh and frozen are more correlated. Delicatessen is somewhat shared between both dimensions, but more towards dimension 2.</p>
+<p>These results are in perfect alignment with the weights of components from pca.</p>
+</blockquote>
 
 </div>
 </div>
@@ -20567,12 +20569,14 @@ These results are in perfect alignment with the weights of components from pca.<
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-<font color="navy"></p>
-<p><ol></p>
+<p><strong>Answer:</strong></p>
+<blockquote><ol>
 <li>K-Means is a simple and a fast algorithm as compared to Gaussian Mixture Model(GMM). K-Means require less number of parameters to be deduced from data as compared to GMM.</li>
 <li>GMM has more advantage in situations where data is not very clearly separable. In such scenarios, a data point should be attributed partially to more than one clusters (or mixtures). Such multi attribution is not possible with K-Means but is possible with GMM. Thus GMM is more flexible, but at the same time requires more number of parameters to be estimated - means and variances of each gaussian.</li>
 <li>In our setup, I feel GMM would suit better as establishments are a mix of various products and there is no clear demarkation. In general, I would first start with GMM and see if we are getting good enough separation, only then use K-Means. If initial iteration with GMM is time consuming, I would try with a smaller random sample of the data.</li>
+</ol>
+</blockquote>
+
 </div>
 </div>
 </div>
@@ -20841,15 +20845,22 @@ Best silhoutte score of 0.3114 obtained with 2 mixtures of gaussians
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-<font color="navy"></p>
-<p><ol></p>
-<li>I tried with clusters from 2 till 5. Below are scores:<br/>
-Clusters : 2, Silhoutte score : 0.4474<br/>
-Clusters : 3, Silhoutte score : 0.3612<br/>
-Clusters : 4, Silhoutte score : 0.3183<br/>
-Clusters : 5, Silhoutte score : 0.2870</li>
-<li>Best silhoutte score of 0.4474 obtained with 2 mixtures. I also tried with using top 3 components of PCA to transform data, found out that the silhoutte score still peaks at 2 mixtures although the score drops. Thus indicating that the variability increases as we keep more dimensions. I am not sure, but I guess there is something that I am missing here. With first 3 components, I am going more closer to actual data, but silhoutte score is getting poor. Does this mean that silhoutte score is not an indicator of good/bad performance? What should we really look at to assess clustering performance?</li>
+<p><strong>Answer:</strong></p>
+<blockquote><ol>
+<li><p>I tried with clusters from 2 till 5. Below are scores:</p>
+
+<pre><code> Clusters : 2, Silhoutte score : 0.4474  
+ Clusters : 3, Silhoutte score : 0.3612  
+ Clusters : 4, Silhoutte score : 0.3183  
+ Clusters : 5, Silhoutte score : 0.2870</code></pre>
+</li>
+<li><p>Best silhoutte score of 0.4474 obtained with 2 mixtures. I also tried with using top 3 components of PCA to transform data, found out that the silhoutte score still peaks at 2 mixtures although the score drops. Thus indicating that the variability increases as we keep more dimensions.<br>
+I am not sure, but I guess there is something that I am missing here. With first 3 components, I am going more closer to actual data, but silhoutte score is getting poor.<br>
+Does this mean that silhoutte score is not an indicator of good/bad performance? What should we really look at to assess clustering performance?</p>
+</li>
+</ol>
+</blockquote>
+
 </div>
 </div>
 </div>
@@ -21689,11 +21700,10 @@ CHgAAAAAxBYBDwAAAIDYIuABAAAAEFsEPAAAAABi6/8D9ByU8q7n0nwAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-<font color="navy">
-First segment captures Fresh and Frozen primarily and to some extent Delicatessen as well.
-<br/>
-Second segment captures Milk, Grocery and Detergents paper and the representation of delicatessen is more in this segment than previous one.</p>
+<p><strong>Answer:</strong></p>
+<blockquote><p>First segment captures Fresh and Frozen primarily and to some extent Delicatessen as well.</p>
+<p>Second segment captures Milk, Grocery and Detergents paper and the representation of delicatessen is more in this segment than previous one.</p>
+</blockquote>
 
 </div>
 </div>
@@ -21748,9 +21758,9 @@ Sample point 2 predicted to be in Cluster 0
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-<font color="navy">
-Sample points belong to segments 1, 1 and 0 - which is also the predicted output.</p>
+<p><strong>Answer:</strong></p>
+<blockquote><p>Sample points belong to segments 1, 1 and 0 - which is also the predicted output.</p>
+</blockquote>
 
 </div>
 </div>
@@ -21794,7 +21804,8 @@ Sample points belong to segments 1, 1 and 0 - which is also the predicted output
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>Reduction in availability of delivery service will affect negatively to daily required services. Fresh comes in such category (Milk can be preserved for few more days). Thus, if delivery service wants to reduce services, it should only do so for customers in segment 1 (Milk, Grocery and Detergents)</p>
+<blockquote><p>Reduction in availability of delivery service will affect negatively to daily required services. Fresh comes in such category (Milk can be preserved for few more days). Thus, if delivery service wants to reduce services, it should only do so for customers in segment 1 (Milk, Grocery and Detergents)</p>
+</blockquote>
 
 </div>
 </div>
@@ -21818,11 +21829,13 @@ Sample points belong to segments 1, 1 and 0 - which is also the predicted output
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-<font color="navy"></p>
-<p><ul></p>
+<p><strong>Answer:</strong></p>
+<blockquote><ul>
 <li>Using unseprvised learning - See which is closest cluster center to the new point and assign that cluster to the new data point.</li>
 <li>Using supervised learning - Use identified customer segment as target variable and train a supervised classification model on current data. Now use this model to rpedict the segment of the customer.</li>
+</ul>
+</blockquote>
+
 </div>
 </div>
 </div>
@@ -22481,12 +22494,14 @@ EFn/PzrP3aIdBgmMAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-<font color="navy"></p>
-<p><ul></p>
+<p><strong>Answer:</strong></p>
+<blockquote><ul>
 <li>The clustering seems to do a good job. Indeed, the two types of establishments are getting two different clusters. There is some overrlap, but mostly clustering is capturing ground truth.</li>
 <li>No, none of the segments can be called to belong purely to any particular establishment.</li>
 <li>Yes, the classifications are consistent with the segments obtained from clustering exercise.</li>
+</ul>
+</blockquote>
+
 </div>
 </div>
 </div>
